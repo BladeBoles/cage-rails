@@ -1,7 +1,11 @@
 <%= form_with(model: character, class: "contents") do |form| %>
   <% if character.errors.any? %>
-    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-md mt-3">
-      <h2><%= pluralize(character.errors.count, "error") %> prohibited this character from being saved:</h2>
+    <div
+      id="error_explanation"
+      class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-md mt-3"
+    >
+      <h2><%= pluralize(character.errors.count, "error") %>
+        prohibited this character from being saved:</h2>
 
       <ul class="list-disc ml-6">
         <% character.errors.each do |error| %>
@@ -13,35 +17,104 @@
 
   <div class="my-5">
     <%= form.label :name %>
-    <%= form.text_field :name, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": character.errors[:name].none?, "border-red-400 focus:outline-red-600": character.errors[:name].any?}] %>
+    <%= form.text_field :name,
+                    class: [
+                      "block shadow-sm rounded-md border px-3 py-2 mt-2 w-full",
+                      {
+                        "border-gray-400 focus:outline-blue-600":
+                          character.errors[:name].none?,
+                        "border-red-400 focus:outline-red-600":
+                          character.errors[:name].any?,
+                      },
+                    ] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :image %>
+    <%= form.file_field :image,
+                    class: [
+                      "block shadow-sm rounded-md border px-3 py-2 mt-2 w-full",
+                      {
+                        "border-gray-400 focus:outline-blue-600":
+                          character.errors[:name].none?,
+                        "border-red-400 focus:outline-red-600":
+                          character.errors[:name].any?,
+                      },
+                    ] %>
   </div>
 
   <div class="my-5">
     <%= form.label :year %>
-    <%= form.number_field :year, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": character.errors[:year].none?, "border-red-400 focus:outline-red-600": character.errors[:year].any?}] %>
+    <%= form.number_field :year,
+                      class: [
+                        "block shadow-sm rounded-md border px-3 py-2 mt-2 w-full",
+                        {
+                          "border-gray-400 focus:outline-blue-600":
+                            character.errors[:year].none?,
+                          "border-red-400 focus:outline-red-600":
+                            character.errors[:year].any?,
+                        },
+                      ] %>
   </div>
 
   <div class="my-5">
     <%= form.label :film %>
-    <%= form.text_field :film, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": character.errors[:film].none?, "border-red-400 focus:outline-red-600": character.errors[:film].any?}] %>
+    <%= form.text_field :film,
+                    class: [
+                      "block shadow-sm rounded-md border px-3 py-2 mt-2 w-full",
+                      {
+                        "border-gray-400 focus:outline-blue-600":
+                          character.errors[:film].none?,
+                        "border-red-400 focus:outline-red-600":
+                          character.errors[:film].any?,
+                      },
+                    ] %>
   </div>
 
   <div class="my-5">
     <%= form.label :description %>
-    <%= form.text_field :description, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": character.errors[:description].none?, "border-red-400 focus:outline-red-600": character.errors[:description].any?}] %>
+    <%= form.text_field :description,
+                    class: [
+                      "block shadow-sm rounded-md border px-3 py-2 mt-2 w-full",
+                      {
+                        "border-gray-400 focus:outline-blue-600":
+                          character.errors[:description].none?,
+                        "border-red-400 focus:outline-red-600":
+                          character.errors[:description].any?,
+                      },
+                    ] %>
   </div>
 
   <div class="my-5">
     <%= form.label :quote %>
-    <%= form.text_field :quote, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": character.errors[:quote].none?, "border-red-400 focus:outline-red-600": character.errors[:quote].any?}] %>
+    <%= form.text_field :quote,
+                    class: [
+                      "block shadow-sm rounded-md border px-3 py-2 mt-2 w-full",
+                      {
+                        "border-gray-400 focus:outline-blue-600":
+                          character.errors[:quote].none?,
+                        "border-red-400 focus:outline-red-600":
+                          character.errors[:quote].any?,
+                      },
+                    ] %>
   </div>
 
   <div class="my-5">
     <%= form.label :rating %>
-    <%= form.text_field :rating, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": character.errors[:rating].none?, "border-red-400 focus:outline-red-600": character.errors[:rating].any?}] %>
+    <%= form.text_field :rating,
+                    class: [
+                      "block shadow-sm rounded-md border px-3 py-2 mt-2 w-full",
+                      {
+                        "border-gray-400 focus:outline-blue-600":
+                          character.errors[:rating].none?,
+                        "border-red-400 focus:outline-red-600":
+                          character.errors[:rating].any?,
+                      },
+                    ] %>
   </div>
 
   <div class="inline">
-    <%= form.submit class: "w-full sm:w-auto rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white inline-block font-medium cursor-pointer" %>
+    <%= form.submit class:
+                  "w-full sm:w-auto rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white inline-block font-medium cursor-pointer" %>
   </div>
 <% end %>
